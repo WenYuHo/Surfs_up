@@ -1,0 +1,20 @@
+-python_file
+from flask import Flask
+
+# New Flask App Instance
+app = Flask(__name__)
+
+# Create Flask Routes, forward slash for root route, function below the route
+@app.route('/')
+
+# Some function
+def hello_world():
+    return 'Hello world'
+
+
+-in shell
+cd .\UCB_Course\surfs_up
+set FLASK_APP=app.py
+flask run
+
+http://127.0.0.1:5000/
