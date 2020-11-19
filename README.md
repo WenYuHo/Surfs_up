@@ -1,12 +1,12 @@
-# surfs_up
-#### Tools Used:\
-##### Python:\
+# Surfs_up
+#### Tools Used:
+##### Python:
 SQLAlchemy(sqlalchemy.ext.automap import automap_base, sqlalchemy.orm import Session, sqlalchemy import create_engine, func),\
 Flask,\
 Numpy,\
 Panda,\
 Matplotlib,\
-Flask,\
+Flask.
 ##### SQLite.
  
 ## Overview of the analysis: 
