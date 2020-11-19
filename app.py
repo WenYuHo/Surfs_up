@@ -1,5 +1,3 @@
-from flask import Flask, jsonify
-
 import datetime as dt
 import numpy as np
 import pandas as pd
@@ -8,9 +6,14 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
+from flask import Flask, jsonify
+
 
 # Connect SQLite Database
-engine = create_engine("sqlite:///hawaii.sqlite")
+# Run into internal server error alot on brach route, has to restart to fix internal server error.
+# add this solve the problem, connect_args={'check_same_thread': False}
+# https://stackoverflow.com/questions/48218065/programmingerror-sqlite-objects-created-in-a-thread-can-only-be-used-in-that-sa/48218213
+engine = create_engine("sqlite:///hawaii.sqlite",connect_args={'check_same_thread': False})
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 
@@ -74,10 +77,11 @@ def temp_monthly():
 @app.route("/api/v1.0/temp/<start>/<end>")
 
 def stats(start=None, end=None):
+    # passing it as a list doesnt seem any impacts
     sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
 
     if end == None:
-        # asterisk is used to indicate there will be multiple results for our query
+        # asterisk is used to indicate there will be multiple results for our query. Needed or error        
         results = session.query(*sel).\
             filter(Measurement.date >= start).all()
         temps = list(np.ravel(results))
