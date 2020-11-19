@@ -18,5 +18,6 @@ are ideal to set up surfing stations.
 
 ## Result:
 - June and December in our locations have identical temperature statstic.
-- June is within 64~77 fahrenheit 50% of the time and December is within 69~74 50% of the time
+- June is within 64~77 fahrenheit 50% of the time and December is within 69 ~ 74 50% of the time
 - Overall, June is slightly cooler than December.
+[](IMG/June_Stats) [](IMG/December_Stats)
