@@ -2,7 +2,6 @@
 #### Tools Used:
 ##### Python:
 SQLAlchemy(sqlalchemy.ext.automap import automap_base, sqlalchemy.orm import Session, sqlalchemy import create_engine, func),\
-Flask,\
 Numpy,\
 Panda,\
 Matplotlib,\
